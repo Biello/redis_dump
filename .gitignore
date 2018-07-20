@@ -32,3 +32,6 @@ bin
 #script and log
 *.sh
 *.log
+
+#finder display file in macOS
+.DS_Store
