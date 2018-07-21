@@ -37,13 +37,13 @@ public class RedisDump {
     }
 
 
-    @ShellMethod("list all keys matches the given pattern from FROM cluster")
+    @ShellMethod("list all keys matches the given pattern from the FROM cluster")
     public String keysFrom(String pattern) throws IOException {
         Set<String> keySet = jedisTool.keysFrom(pattern);
         return keySet.stream().collect(Collectors.joining("\n")) + "\nTotal: " + keySet.size();
     }
 
-    @ShellMethod("list all keys matches the given pattern from TO cluster")
+    @ShellMethod("list all keys matches the given pattern from the TO cluster")
     public String keysTo(String pattern) throws IOException {
         Set<String> keySet = jedisTool.keysTo(pattern);
         return keySet.stream().collect(Collectors.joining("\n")) + "\nTotal: " + keySet.size();
@@ -64,7 +64,7 @@ public class RedisDump {
         return keySet.size() + " entrys dumped to file: " + filename;
     }
 
-    @ShellMethod("restore all key-value entrys from a dump file to the redis cluster")
+    @ShellMethod("restore all key-value entrys from a dump file to the TO redis cluster")
     public String restore(String filename) throws IOException {
         Scanner sc = new Scanner(new FileInputStream(filename));
         int count = 0;

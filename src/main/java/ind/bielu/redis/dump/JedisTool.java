@@ -18,11 +18,11 @@ import redis.clients.jedis.*;
 @Component
 public class JedisTool {
 
-    // from jedis list and cluster
+    // the FROM jedis list and cluster
     private List<Jedis> fromList = new ArrayList<>();;
     private JedisCluster fjc;
 
-    // to jedis list and cluster
+    // the TO jedis list and cluster
     private List<Jedis> toList = new ArrayList<>();;
     private JedisCluster tjc;
 
